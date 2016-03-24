@@ -10,6 +10,7 @@ export default function({dispatch}){
         console.log(response);
         //create new action with old action, but replace the payload
         const newAction = { ...action, payload: response.data }
+        //sends newAction back through ALL the reducers again
         dispatch(newAction);
       })
   };
